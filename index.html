@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>nakazanie-ton — год активности</title>
+    <link rel="icon" href="data:,">
+    <meta
+      name="description"
+      content="Годовой срез git- и GitHub-активности nakazanie-ton: проекты, стек, периоды работы и ключевые фазы за 2025–2026."
+    >
+    <style>
+      :root {
+        --bg: #ededea;
+        --text: #161714;
+        --muted: #686b64;
+        --accent: #222420;
+        --soft: #83877f;
+        --max: 960px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Avenir Next", "Helvetica Neue", "Segoe UI", sans-serif;
+        line-height: 1.45;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--soft);
+      }
+
+      main {
+        width: min(calc(100% - 40px), var(--max));
+        margin: 0 auto;
+        padding: 28px 0 48px;
+      }
+
+      section {
+        margin-top: 48px;
+      }
+
+      .topline,
+      .small {
+        font-size: 13px;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+      }
+
+      .hero {
+        margin-top: 8px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(44px, 9vw, 88px);
+        line-height: 0.94;
+        margin-top: 12px;
+      }
+
+      h2 {
+        font-size: clamp(24px, 4vw, 34px);
+        margin-bottom: 14px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+
+      p {
+        margin: 0 0 14px;
+        max-width: 720px;
+        font-size: 17px;
+      }
+
+      .lead {
+        margin-top: 22px;
+        font-size: clamp(18px, 2.2vw, 24px);
+        line-height: 1.32;
+        max-width: 820px;
+      }
+
+      .meta-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .meta-links a {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px 18px;
+        margin-top: 28px;
+      }
+
+      .stat-value {
+        font-size: clamp(26px, 4.5vw, 42px);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+      }
+
+      .stat-label {
+        margin-top: 6px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .columns {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 24px;
+      }
+
+      .plain-list,
+      .timeline,
+      .project-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .plain-list li,
+      .project-list li {
+        margin: 0 0 12px;
+        color: var(--text);
+      }
+
+      .plain-list span,
+      .project-list span,
+      .timeline span {
+        color: var(--muted);
+      }
+
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        max-width: 820px;
+      }
+
+      .stack span {
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      .timeline li {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 14px;
+        margin-bottom: 14px;
+      }
+
+      .timeline strong {
+        font-size: 14px;
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .timeline p {
+        margin: 0;
+        max-width: none;
+        font-size: 16px;
+      }
+
+      .project-list li {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .project-meta {
+        text-align: right;
+        font-size: 13px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      footer {
+        margin-top: 56px;
+        padding-top: 6px;
+      }
+
+      @media (max-width: 860px) {
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .columns {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        main {
+          width: min(calc(100% - 28px), var(--max));
+          padding-top: 22px;
+          padding-bottom: 36px;
+        }
+
+        section {
+          margin-top: 36px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .stats {
+          gap: 16px 10px;
+        }
+
+        .timeline li,
+        .project-list li {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+
+        .project-meta {
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="topline">Git + GitHub activity report</div>
+
+      <header class="hero">
+        <h1>nakazanie-ton</h1>
+        <p class="lead">
+          За последний год по локальным репозиториям и GitHub-активности видно устойчивый фокус на
+          TON и Telegram продуктах, AI-ботах, трейдинговой инфраструктуре и внутренних продуктовых
+          инструментах.
+        </p>
+        <p>
+          Это не резюме “вообще”, а конкретный годовой срез работы: какие проекты были активны,
+          когда именно шли основные фазы, на каком стеке всё делалось и как это отражалось в GitHub.
+        </p>
+
+        <div class="meta-links">
+          <a href="https://github.com/nakazanie-ton">GitHub</a>
+          <a href="#timeline">Таймлайн</a>
+          <a href="#projects">Проекты</a>
+        </div>
+
+        <div class="stats" aria-label="Основные метрики за год">
+          <div>
+            <div class="stat-value">101</div>
+            <div class="stat-label">активный проект</div>
+          </div>
+          <div>
+            <div class="stat-value">6972</div>
+            <div class="stat-label">локальных коммита</div>
+          </div>
+          <div>
+            <div class="stat-value">106</div>
+            <div class="stat-label">authored PRs на GitHub</div>
+          </div>
+          <div>
+            <div class="stat-value">13</div>
+            <div class="stat-label">новых репозиториев в GitHub profile graph</div>
+          </div>
+        </div>
+      </header>
+
+      <section>
+        <div class="columns">
+          <div>
+            <h2>Обо мне по данным</h2>
+            <p>
+              По проектной активности профиль выглядит как hands-on engineer с очень широким
+              диапазоном доменов: TON tooling, Telegram Mini Apps и боты, AI generation bots,
+              backend-сервисы, product websites и trading systems.
+            </p>
+            <p>
+              В течение года работа шла не равномерно, а спринтами: летом был сильный всплеск по
+              игровым и gift-проектам, осенью большой блок TON-apps, зимой Quokka Fitness и AI,
+              весной 2026 — samplence, tg-order-parser, trade_system и blacktube.
+            </p>
+          </div>
+          <div>
+            <h2>Основной стек</h2>
+            <div class="stack">
+              <span>TypeScript</span>
+              <span>Python</span>
+              <span>React</span>
+              <span>Next.js</span>
+              <span>FastAPI</span>
+              <span>Docker</span>
+              <span>Telegram Mini Apps</span>
+              <span>Telegram Bots</span>
+              <span>TON</span>
+              <span>Trading / analytics systems</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Крупные фазы года</h2>
+        <ul class="plain-list">
+          <li><strong>Весна 2025.</strong> <span>Hedger, Giftify, NFT/gift tooling, первые TON и Telegram utility-проекты.</span></li>
+          <li><strong>Лето 2025.</strong> <span>Сверхинтенсивный sprint по blast, затем kabanich, Site, gifts, storm и смежным продуктам.</span></li>
+          <li><strong>Осень 2025.</strong> <span>Vaulty / Vaulty App, TON product tooling, x402 / ton-connect / EVAA / gift flows.</span></li>
+          <li><strong>Зима 2025–2026.</strong> <span>Quokka Fitness, afonya-aI, sora-bot, askme, merge, polyscreamer.</span></li>
+          <li><strong>Весна 2026.</strong> <span>Samplence, tg-order-parser, trade_system, codex-project-kit, arbiq, blacktube.</span></li>
+        </ul>
+      </section>
+
+      <section id="timeline">
+        <h2>Таймлайн по месяцам</h2>
+        <ul class="timeline">
+          <li>
+            <strong>2025-04</strong>
+            <p>Старт с небольших TON utility-проектов: ton-celebs-list, bot-sub-checker, tact-smart-battle.</p>
+          </li>
+          <li>
+            <strong>2025-05</strong>
+            <p>Главный фокус на hedger, giftify-front, Pepe_cheker и hypertracker. Месяц TON / gifts / UI-интеграций.</p>
+          </li>
+          <li>
+            <strong>2025-06</strong>
+            <p>hedger продолжается, добавляются palette-front, awesome-telegram-gifts, effective-spork-backend, ui-sdk и swapy.</p>
+          </li>
+          <li>
+            <strong>2025-07</strong>
+            <p>Огромный спринт по blast: 2388 коммитов за месяц. Остальная активность точечная.</p>
+          </li>
+          <li>
+            <strong>2025-08</strong>
+            <p>blast и kabanich становятся двумя доминирующими линиями. Параллельно gifts, Site, kingyryatina, storm.</p>
+          </li>
+          <li>
+            <strong>2025-09</strong>
+            <p>Сильный сдвиг в сторону Vaulty: vaulty и vaulty-app, затем kabanich, gifts и старт giftopoly-app линии.</p>
+          </li>
+          <li>
+            <strong>2025-10</strong>
+            <p>Продолжение vaulty / vaulty-app плюс x402-auction-mcp, ton-connect-mcp, evaa-ref и TON app tooling.</p>
+          </li>
+          <li>
+            <strong>2025-11</strong>
+            <p>AI и bot-heavy месяц: afonya-aI, sora-bot, askme, grok-ton, how-to-work, golden-visa.</p>
+          </li>
+          <li>
+            <strong>2025-12</strong>
+            <p>Quokka-Fitness становится главным направлением. Дополнительно идёт mergeup.</p>
+          </li>
+          <li>
+            <strong>2026-01</strong>
+            <p>Пик по Fitness, много работы по afonya-aI, mergeup, polyscreamer; появляется blacktube.</p>
+          </li>
+          <li>
+            <strong>2026-02</strong>
+            <p>Самый плотный месяц по Fitness, плюс codefixer, repostik и остаточная AI-активность.</p>
+          </li>
+          <li>
+            <strong>2026-03</strong>
+            <p>Главный фокус месяца: samplence. Следом tg-order-parser, Fitness, giftopoly-app, trade_system и codex-project-kit.</p>
+          </li>
+          <li>
+            <strong>2026-04</strong>
+            <p>Продолжается samplence, активно растут blacktube и trade_system. Это уже переход в новый цикл.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="projects">
+        <h2>Ключевые линии работы</h2>
+        <ul class="project-list">
+          <li>
+            <div>
+              <h3>Games, gifts и consumer experiments</h3>
+              <div class="small">Летний блок с очень высокой плотностью изменений: игровые механики, Telegram flows, consumer UX</div>
+            </div>
+            <div class="project-meta">лето 2025</div>
+          </li>
+          <li>
+            <div>
+              <h3>Fitness product line</h3>
+              <div class="small">Крупный зимний и весенний блок: backend, mobile, workflows, test infrastructure, release и CI</div>
+            </div>
+            <div class="project-meta">зима → весна</div>
+          </li>
+          <li>
+            <div>
+              <h3>AI product and research tooling</h3>
+              <div class="small">Весной 2026 усиливается линия продуктовых и research-oriented интерфейсов на TypeScript / Docker</div>
+            </div>
+            <div class="project-meta">весна 2026</div>
+          </li>
+          <li>
+            <div>
+              <h3>TON apps and Mini Apps</h3>
+              <div class="small">Осенний блок вокруг TON-продуктов, web apps, wallet/tooling flows и Telegram Mini Apps</div>
+            </div>
+            <div class="project-meta">осень 2025</div>
+          </li>
+          <li>
+            <div>
+              <h3>Trading and analytics systems</h3>
+              <div class="small">Python-сервисы для позиций, сигналов, стратегий, аналитики и исполнения на нескольких площадках</div>
+            </div>
+            <div class="project-meta">сквозная линия года</div>
+          </li>
+          <li>
+            <div>
+              <h3>AI bots and media generation</h3>
+              <div class="small">Next.js / webhook backend для generation bots, billing, queueing, prompt flows и media delivery</div>
+            </div>
+            <div class="project-meta">2025-11 → 2026-03</div>
+          </li>
+          <li>
+            <div>
+              <h3>Developer tooling</h3>
+              <div class="small">Отдельная линия по Codex / MCP / internal tooling, GitHub workflows и automation-friendly project kits</div>
+            </div>
+            <div class="project-meta">в течение года</div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>GitHub слой</h2>
+        <p>
+          GitHub даёт дополнительный контекст, но не полную картину объёма работы. За этот период
+          видно <strong>106 authored PRs</strong>, <strong>13 repository creation events</strong> и
+          только <strong>142 contributions</strong> в profile graph. Это нормальная разница:
+          локальный git всегда богаче, чем contribution graph.
+        </p>
+        <p>
+          Самые заметные web-сигналы: `blast` летом 2025, `how-to-work` в ноябре, `polyscreamer`
+          в январе 2026, `codex-project-kit` и `WellseLanding` в марте 2026, `blacktube` в апреле.
+        </p>
+      </section>
+
+      <footer>
+        <div class="small">
+          Источник данных: локальный git в `~/Documents/GitHub` + GitHub API. Это публичная, сокращённая
+          версия годового отчёта.
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
